@@ -9,15 +9,14 @@ public class Calculator {
     }
 
     public double total(double credit, double rate, double term) {
-        Calculator calculator = new Calculator();
-        double result = calculator.monthlyPayment(credit, rate, term);
+
+        double result = monthlyPayment(credit, rate, term);
         result = Math.round(result * term * 100) / 100.00;
         return result;
     }
 
     public double overpayment(double credit, double rate, double term) {
-        Calculator calculator = new Calculator();
-        double result = calculator.total(credit, rate, term);
+        double result = total(credit, rate, term);
         result = Math.round((result - credit) * 100) / 100.00;
         return result;
     }
